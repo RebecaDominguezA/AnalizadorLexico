@@ -687,5 +687,683 @@ def analizar_codigo(ruta_archivo):
                                 #Reset de lectura
                                 primero=1
                                 segundo=0
+
+                    
                                 caracter_esperado=""
+                           
+                    else:
+                        print("Caracter actual--:"+caracter)
+                        if caracter=="\n":
+                            guardar_como_any=0
+                            print("estado_anterior"+estado_anterior)
+                            print("estado actual:"+estado_actual)
+                            estado_siguiente=estado_inicial
+                            print("estado siguiente:"+estado_siguiente)
+                            print("Caracter de salto de linea implicito.")
+                            print("LEXEMA ACTUAL:"+lexema)
+                            if estado_actual in estados_FPR:
+                                print("Estado actual pertenece a estados finales de reservadas")
+                                if(caracter==" "):
+                                    print("quitamos espacio")
+                                    lexema = lexema[:-1]
+                                else:
+                                    lexema = lexema[:-1] 
+                                    memoria+=caracter
+                                print(lexema+"in reservadas")
+                                if lexema in palabras_reservadas:
+                                    print("yes")
+                                    objeto=MisTokens(lexema.upper(),lexema,"null")
+                                    lista_objetos.append(objeto)
+                                    guardar_como_any=0
+                                    if memoria:
+                                        lexema=memoria
+                                        memoria=""
+                                    else:
+                                        lexema=""
+                                else:
+                                    print("El objeto guardado fue:"+lexema)
+                                    input("Que paso")
+                                    objeto=MisTokens("IDENTIFICADOR",lexema,"null")
+                                    lista_objetos.append(objeto)
+                                    guardar_como_any=0
+                            elif estado_actual in estados_FString:
+                                objeto=MisTokens("STRING",lexema,"null")
+                                lista_objetos.append(objeto)
+                                guardar_como_any=0
+                            elif estado_actual =="q3":
+                                lexema = lexema[:-1]
+                                memoria+=caracter
+                                print("se guardo"+lexema)
+                                objeto=MisTokens("ENTERO",lexema,lexema)
+                                lista_objetos.append(objeto)
+                                if caracter==" ":
+                                    lexema=""
+                                    memoria=""
+                                else:   
+                                    if memoria:
+                                        lexema=memoria
+                                        memoria=""
+                                    else:
+                                        lexema=""
+                                guardar_como_any=0
+                            elif estado_actual =="q4":
+                                lexema = lexema[:-1]
+                                memoria+=caracter
+                                objeto=MisTokens("EXPONENCIAL",lexema,lexema)
+                                lista_objetos.append(objeto)
+                                if caracter==" ":
+                                    lexema=""
+                                    memoria=""
+                                else:   
+                                    if memoria:
+                                        lexema=memoria
+                                        memoria=""
+                                    else:
+                                        lexema=""
+                                guardar_como_any=0
+                            elif estado_actual =="q5":
+                                lexema = lexema[:-1]
+                                memoria+=caracter
+                                valor_decimal = float(lexema)
+                                objeto=MisTokens("DECIMAL",lexema,str(valor_decimal))
+                                lista_objetos.append(objeto)
+                                if caracter==" ":
+                                    lexema=""
+                                    memoria=""
+                                else:   
+                                    if memoria:
+                                        lexema=memoria
+                                        memoria=""
+                                    else:
+                                        lexema=""
+                                guardar_como_any=0
+                            elif estado_actual =="q7":
+                                #lexema = lexema[:-1]
+                                memoria+=caracter
+                                print("guardamos:"+lexema)
+                                objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
+                                lista_objetos.append(objeto)
+                                if caracter==" ":
+                                    lexema=""
+                                    memoria=""
+                                else:   
+                                    if memoria:
+                                        lexema=memoria
+                                        memoria=""
+                                    else:
+                                        lexema=""
+                                guardar_como_any=0
+                            elif estado_actual=="q500":
+                                lexema = lexema[:-1]
+                                memoria+=caracter
+                                objeto=MisTokens("IDENTIFICADOR",lexema,"null")
+                                lista_objetos.append(objeto)
+                                if caracter==" ":
+                                    lexema=""
+                                    memoria=""
+                                else:   
+                                    if memoria:
+                                        lexema=memoria
+                                        memoria=""
+                                    else:
+                                        lexema=""
+                                guardar_como_any=0
+                            elif estado_actual=="q0":
+                                #verificamos de donde viene
+                                print("estado anterior:"+estado_anterior)
+                                #if estado_anterior==
+                                #Hubo un espacio inecesario
+                                lexema=""
                         
+                            
+                            
+                            
+                            lexema=""
+                            estado_actual=estado_inicial
+                            if estado_actual=="q2" or estado_actual=="q1":
+                                sys.exit("Error: No se cerro cadena.")
+                                
+                        else:
+                            lexema+=caracter
+                            print(caracter)
+                            print(estado_actual)
+                            print("LEXEMA ACTUAL:"+lexema)
+                            #En dicha variable guardaremos si se trata de, Number, symbol, ", ', posible PR, o any (candidata a ID)
+                            caso=""
+                            #Debemos evaluar de que tipo de letra se trata, llamamos a evaluadores/Interpretes
+                            if caracter in estados_nfa.get(estado_actual, {}):
+                                guardar_como_any=0
+                            else:
+                                guardar_como_any=1
+                            caso=interprete(caracter,simbolos,PosiblesPR,guardar_como_any)
+                            print("caso:"+caso)
+                            if inicio==1:
+                                inicio=1
+                                if caso == "'":
+                                    #estado_anterior=estado_actual
+                                    estado_siguiente = next(iter(estados_nfa[estado_actual][caso]))
+                                    guardar_como_any=1
+                                elif caso== '"':
+                                    #estado_anterior=estado_actual
+                                    estado_siguiente = next(iter(estados_nfa[estado_actual][caso]))
+                                    guardar_como_any=1
+                                elif caso=="Number":
+                                    #estado_anterior=estado_actual
+                                    estado_siguiente = next(iter(estados_nfa[estado_actual][caso]))
+                                    guardar_como_any=1
+                                elif caso=="symbol":
+                                    #estado_anterior=estado_actual
+                                    estado_siguiente = next(iter(estados_nfa[estado_actual][caso]))
+                                else:
+                                    #estado_anterior=estado_actual
+                                    estado_siguiente = next(iter(estados_nfa[estado_actual][caso]))
+                                
+                                print("Estado actual:"+estado_actual)
+                                print("Estado siguiente:"+estado_siguiente)
+                                
+                                if estado_siguiente =="q0":
+                                    #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
+                                    print("Estamos a punto de guardar YA QUE ESTADO SIG ES Q0:"+lexema)
+                                    print("E actual:"+estado_actual)
+                                    if estado_actual in estados_FPR:
+                                        print("Estado actual pertenece a estados finales de reservadas")
+                                        if(caracter==" "):
+                                            print("quitamos espacio")
+                                            lexema = lexema[:-1]
+                                        else:
+                                            lexema = lexema[:-1] 
+                                            memoria+=caracter
+                                        print(lexema+"in reservadas")
+                                        if lexema in palabras_reservadas:
+                                            print("yes")
+                                            objeto=MisTokens(lexema.upper(),lexema,"null")
+                                            lista_objetos.append(objeto)
+                                            guardar_como_any=0
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        else:
+                                            print("El objeto guardado fue:"+lexema)
+                                            input("Que paso")
+                                            objeto=MisTokens("IDENTIFICADOR",lexema,"null")
+                                            lista_objetos.append(objeto)
+                                            guardar_como_any=0
+                                    elif estado_actual in estados_FString:
+                                        objeto=MisTokens("STRING",lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        guardar_como_any=0
+                                    elif estado_actual =="q3":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        print("se guardo"+lexema)
+                                        objeto=MisTokens("ENTERO",lexema,lexema)
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                    elif estado_actual =="q4":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        objeto=MisTokens("EXPONENCIAL",lexema,lexema)
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                    elif estado_actual =="q5":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        valor_decimal = float(lexema)
+                                        objeto=MisTokens("DECIMAL",lexema,str(valor_decimal))
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                    elif estado_actual =="q7":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        print("guardamos:"+lexema)
+                                        objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                    elif estado_actual=="q500":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        objeto=MisTokens("IDENTIFICADOR",lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                    elif estado_actual=="q0":
+                                        #verificamos de donde viene
+                                        print("estado anterior:"+estado_anterior)
+                                        #if estado_anterior==
+                                        #Hubo un espacio inecesario
+                                        lexema=""
+                                    else:
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        objeto=MisTokens("IDENTIFICADOR",lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                        
+                                        
+                                        
+                                elif (estado_siguiente=="q2" or estado_siguiente=="q1") and (estado_actual in estados_FPR):
+                                    lexema = lexema[:-1] 
+                                    memoria+=caracter
+                                    print(lexema+"in reservadas")
+                                    if lexema in palabras_reservadas:
+                                        print("yes")
+                                        objeto=MisTokens(lexema.upper(),lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        guardar_como_any=1
+                                        if memoria:
+                                            lexema=memoria
+                                            memoria=""
+                                        else:
+                                            lexema=""
+                                    else:
+                                        print("El objeto guardado fue:"+lexema)
+                                        input("Que paso")
+                                        objeto=MisTokens("IDENTIFICADOR",lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        guardar_como_any=1
+                                        if memoria:
+                                            lexema=memoria
+                                            memoria=""
+                                        else:
+                                            lexema=""
+                                elif estado_siguiente=="q3":
+                                    if estado_actual=="q7":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        print("guardamos:"+lexema)
+                                        objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                elif estado_siguiente=="q500":
+                                    print("En q500")
+                                    #Es posiblemente id, asi que verificamos
+                                    #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
+                                    print("Estamos a punto de guardar, recibimos algo y venimos un estado qn:"+lexema)
+                                    print("E actual:"+estado_actual)
+                                    if (estado_actual in estados_FPR) and caso!="any":
+                                        print("Estado actual pertenece a estados finales de reservadas")
+                                        if(caracter==" "):
+                                            print("quitamos espacio")
+                                            lexema = lexema[:-1]
+                                        else:
+                                            lexema = lexema[:-1] 
+                                            memoria+=caracter
+                                        print(lexema+"in reservadas")
+                                        if lexema in palabras_reservadas:
+                                            print("yes")
+                                            objeto=MisTokens(lexema.upper(),lexema,"null")
+                                            lista_objetos.append(objeto)
+                                            guardar_como_any=0
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        else:
+                                            print("El objeto guardado fue:"+lexema)
+                                            input("Que paso")
+                                            objeto=MisTokens("IDENTIFICADOR",lexema,"null")
+                                            lista_objetos.append(objeto)
+                                            guardar_como_any=0
+                                    elif estado_actual in estados_FString:
+                                        objeto=MisTokens("STRING",lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        guardar_como_any=0
+                                    elif estado_actual =="q3":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        print("se guardo"+lexema)
+                                        objeto=MisTokens("ENTERO",lexema,lexema)
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                    elif estado_actual =="q4":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        objeto=MisTokens("EXPONENCIAL",lexema,lexema)
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                    elif estado_actual =="q5":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        valor_decimal = float(lexema)
+                                        objeto=MisTokens("DECIMAL",lexema,str(valor_decimal))
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                    elif estado_actual =="q7":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        print("guardamos:"+lexema)
+                                        objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                    elif estado_actual=="q0":
+                                        #verificamos de donde viene
+                                        print("estado anterior:"+estado_anterior)
+                                        #if estado_anterior==
+                                        #Hubo un espacio inecesario
+                                        #lexema=""
+                                    """
+                                    elif estado_actual=="q500":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        objeto=MisTokens("IDENTIFICADOR",lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                    """
+                                    
+                                
+                                    
+                                    guardar_como_any=1
+                                elif estado_siguiente=="q60":
+                                    #Se escoge opciones de 6 casos
+                                    
+                                    if caracter=="=" and estado_anterior=="q7":
+                                        objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        estado_siguiente=estado_inicial
+                                        guardar_como_any=0
+                                    elif caracter=="/":
+                                        BanderaT1=1
+                                        estado_siguiente=estado_inicial
+                                    elif caracter=="*":
+                                        BanderaT2=1
+                                        estado_siguiente=estado_inicial
+                                    else:
+                                        #es otro simbolo
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        print("lexema"+lexema)
+                                        objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                                
+                                            else:
+                                                lexema=""
+                                        
+                                        guardar_como_any=0
+                                        estado_siguiente="q7"
+                                elif estado_siguiente=="q7":
+                                    #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
+                                    print("Estamos a punto de guardar, recibimos un simbolo y venimos un estado qn:"+lexema)
+                                    print("E actual:"+estado_actual)
+                                    if estado_actual in estados_FPR:
+                                        print("Estado actual pertenece a estados finales de reservadas")
+                                        if(caracter==" "):
+                                            print("quitamos espacio")
+                                            lexema = lexema[:-1]
+                                        else:
+                                            lexema = lexema[:-1] 
+                                            memoria+=caracter
+                                        print(lexema+"in reservadas")
+                                        if lexema in palabras_reservadas:
+                                            print("yes")
+                                            objeto=MisTokens(lexema.upper(),lexema,"null")
+                                            lista_objetos.append(objeto)
+                                            guardar_como_any=0
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        else:
+                                            print("El objeto guardado fue:"+lexema)
+                                            input("Que paso")
+                                            objeto=MisTokens("IDENTIFICADOR",lexema,"null")
+                                            lista_objetos.append(objeto)
+                                            guardar_como_any=0
+                                    elif estado_actual in estados_FString:
+                                        objeto=MisTokens("STRING",lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        guardar_como_any=0
+                                    elif estado_actual =="q3":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        print("se guardo"+lexema)
+                                        objeto=MisTokens("ENTERO",lexema,lexema)
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                        
+                                    elif estado_actual =="q4":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        objeto=MisTokens("EXPONENCIAL",lexema,lexema)
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                    elif estado_actual =="q5":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        valor_decimal = float(lexema)
+                                        objeto=MisTokens("DECIMAL",lexema,str(valor_decimal))
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                    elif estado_actual =="q7":
+                                        objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        guardar_como_any=0
+                                    elif estado_actual=="q500":
+                                        lexema = lexema[:-1]
+                                        memoria+=caracter
+                                        objeto=MisTokens("IDENTIFICADOR",lexema,"null")
+                                        lista_objetos.append(objeto)
+                                        if caracter==" ":
+                                            lexema=""
+                                            memoria=""
+                                        else:   
+                                            if memoria:
+                                                lexema=memoria
+                                                memoria=""
+                                            else:
+                                                lexema=""
+                                        guardar_como_any=0
+                                    elif estado_actual=="q0":
+                                        #verificamos de donde viene
+                                        print("estado anterior:"+estado_anterior)
+                                        #Hubo un espacio inecesario
+                                        #lexema=""
+
+                                else:
+                                    if estado_actual=="q7":
+                                        print("Estamos a punto de guardar, venimos de simbolo hacia opciones:"+lexema)
+                                        print("E actual:"+estado_actual)
+                                        #if caracter not in estados_nfa.get(estado_actual, {}):
+                                        if caracter in PosiblesPR:
+                                            lexema = lexema[:-1]
+                                            memoria+=caracter
+                                            print("guardamos:"+lexema)
+                                            objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
+                                            lista_objetos.append(objeto)
+                                            if caracter==" ":
+                                                lexema=""
+                                                memoria=""
+                                            else:   
+                                                if memoria:
+                                                    lexema=memoria
+                                                    memoria=""
+                                                else:
+                                                    lexema=""
+                                            guardar_como_any=0
+                                            
+                    estado_anterior=estado_actual        
+                    estado_actual=estado_siguiente        
+                    print()
+                        
+                    contador_caracteres += 1
+                    
+            #print("caracteres"+ str(contador_caracteres-1))
+            tamanio_caracteres_totales=contador_caracteres
+            contador_caracteres = 0
+            
+    
+        print("\nAnalisis lexico:")
+        for objeto in lista_objetos:
+            print("<"+objeto.tipo + ","+objeto.valor1+","+objeto.valor2+">")
+
+    except FileNotFoundError:
+        return "El archivo no se encontró."
+    except PermissionError:
+        return "No tienes permisos para acceder al archivo."
+
+def main():
+    while True:
+        entrada = input("$>>")
+        
+        # Verificar si la entrada es un archivo con una ruta completa de estilo Windows
+        if ":" in entrada:
+            ruta_archivo = entrada.strip()
+            analizar_codigo(ruta_archivo)
+                
+            input("\nPresiona Enter para continuar...")
+            os.system('cls' if os.name == 'nt' else 'clear')
+        else:
+            codigo = entrada
+            analizar_codigo2(codigo)
+            input("\nPresiona Enter para continuar...")
+            os.system('cls' if os.name == 'nt' else 'clear')
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nSaliendo del programa.")

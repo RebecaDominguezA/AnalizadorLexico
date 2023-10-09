@@ -12,58 +12,58 @@ estados_nfa = {
         },
     
     #Palabras reservadas
-    'q8': {'n': {'q19'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}}, 
-    'q19': {'d': {'q20'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}}, 
-    'q20': {"symbol": {'q0'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #AND
+    'q8': {'n': {'q19'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}}, 
+    'q19': {'d': {'q20'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}}, 
+    'q20': {"symbol": {'q7'},'Number': {'q500'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #AND
     
-    'q9': {'l': {'q21'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q21': {'s': {'q22'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q22': {'e': {'q23'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q23': {"symbol": {'q0'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #ELSE Y FALSE y TRUE Y WHILE
+    'q9': {'l': {'q21'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q21': {'s': {'q22'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q22': {'e': {'q23'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q23': {"symbol": {'q7'},'Number': {'q500'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #ELSE Y FALSE y TRUE Y WHILE
     
-    'q10': {'a': {'q24'},'o': {'q25'},'u': {'q27'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},#FA o FO
-    'q24': {'l': {'q21'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},#Retorna a q21 si todo va bien
-    'q25': {'r': {'q26'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q26': {"symbol": {'q7'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #FOR y OR Y VAR
+    'q10': {'a': {'q24'},'o': {'q25'},'u': {'q27'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},#FA o FO
+    'q24': {'l': {'q21'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},#Retorna a q21 si todo va bien
+    'q25': {'r': {'q26'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q26': {"symbol": {'q7'},'Number': {'q500'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #FOR y OR Y VAR
     
-    'q27': {'n': {'q28'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q28': {"symbol": {'q0'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #FUN y RETURN
+    'q27': {'n': {'q28'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q28': {"symbol": {'q7'},'Number': {'q500'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #FUN y RETURN
     
-    'q12': {'f': {'q29'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q29': {"symbol": {'q0'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #IF
+    'q12': {'f': {'q29'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q29': {"symbol": {'q7'},'Number': {'q500'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #IF
     
-    'q13': {'u': {'q30'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q30': {'l': {'q31'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q31': {'l': {'q32'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q32': {"symbol": {'q0'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #NULL
+    'q13': {'u': {'q30'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q30': {'l': {'q31'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q31': {'l': {'q32'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q32': {"symbol": {'q7'},'Number': {'q500'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #NULL
     
-    'q14': {'r': {'q33'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q33': {'i': {'q34'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q34': {'n': {'q35'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q35': {'t': {'q36'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q36': {"symbol": {'q0'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #PRINT
+    'q14': {'r': {'q33'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q33': {'i': {'q34'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q34': {'n': {'q35'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q35': {'t': {'q36'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q36': {"symbol": {'q7'},'Number': {'q500'},"'": {'q1'},'"': {'q2'}," ": {'q0'},'any': {'q500'}}, #PRINT
     
-    'q15': {'e': {'q37'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q37': {'t': {'q38'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q38': {'u': {'q39'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q39': {'r': {'q28'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},#mandamos a q28 pues termina en n
+    'q15': {'e': {'q37'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q37': {'t': {'q38'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q38': {'u': {'q39'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q39': {'r': {'q27'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},#mandamos a q28 pues termina en n
     
-    'q16': {'r': {'q40'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q40': {'u': {'q41'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q41': {'e': {'q23'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},#mandamos a q23 pues termina en e
+    'q16': {'r': {'q40'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q40': {'u': {'q41'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q41': {'e': {'q23'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},#mandamos a q23 pues termina en e
     
-    'q17': {'a': {'q42'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q42': {'r': {'q26'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},#mandamos a q26 pues termina en r
+    'q17': {'a': {'q42'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q42': {'r': {'q26'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},#mandamos a q26 pues termina en r
     
-    'q18': {'h': {'q43'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q43': {'i': {'q44'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q44': {'l': {'q45'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
-    'q45': {'e': {'q23'}, "symbol": {'q0'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},#mandamos a q23 pues termina en e
+    'q18': {'h': {'q43'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q43': {'i': {'q44'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q44': {'l': {'q45'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},
+    'q45': {'e': {'q23'}, "symbol": {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}},#mandamos a q23 pues termina en e
     
     
     #Cadenas
-    'q1': {'any': {'q2'}, "'": {'q0'}},
-    'q2': {'any': {'q2'}, '"': {'q0'}},
+    'q1': {'any': {'q2'},'Number': {'q2'},'symbol': {'q2'}, "'": {'q0'}},
+    'q2': {'any': {'q2'},'Number': {'q2'},'symbol': {'q2'}, '"': {'q0'}},
     
     #Numeros
     'q3': {'Number': {'q3'}, "^": {'q4'}, ".": {'q5'},"symbol": {'q7'}," ": {'q0'}, "any": {'q500'},   "'": {'q0'},'"': {'q0'}},#Entero
@@ -79,7 +79,7 @@ estados_nfa = {
     'q60': {},#Si se llega a q60, se hace siempre una comparacion de que simbolo fue el anterior. Y se sacan conclusiones. Cso 1,2,3,4,5,6
     
     #Identificadores en 500
-    'q500': {'symbol': {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'any': {'q500'}}
+    'q500': {'symbol': {'q7'},"'": {'q0'},'"': {'q0'}," ": {'q0'},'Number': {'q500'},'any': {'q500'}}
 }
 
 # Diccionario de simbolos a reconocer
@@ -157,7 +157,7 @@ def interprete(caracter, simbolos,PosiblesPR,guardar_como_any):
         if guardar_como_any==1:
             return "any"
         elif caracter==" ":
-            print("Caso vacio")
+            #print("Caso vacio")
             return caracter
         else:
             return caracter
@@ -165,9 +165,7 @@ def interprete(caracter, simbolos,PosiblesPR,guardar_como_any):
                 #return caracter
             #else:
                 #return "any"
-def analizar_codigo2(codigo):
-    print("Se manda a archivo.txt")
-
+    
 def analizar_codigo(ruta_archivo,caso):
     if caso==1:
         try:
@@ -177,8 +175,8 @@ def analizar_codigo(ruta_archivo,caso):
                 memoria=""
                 # Utilizamos la función readlines() para leer todas las líneas del archivo en una lista.
                 lineas = archivo.readlines()
-                for linea in lineas:
-                    print(linea)
+                #for linea in lineas:
+                    #print(linea)
                     
                 # Abre el archivo en modo lectura
                 with open(ruta_archivo, "r") as archivo:
@@ -211,27 +209,33 @@ def analizar_codigo(ruta_archivo,caso):
                         caracter = archivo.read(1)  
                         if not caracter:
                             if BanderaT2==1:
+                                print("Antes de cerrar por Error se imprime objetos que se lograron guardar.")
+                                for objeto in lista_objetos:
+                                    print("<"+objeto.tipo + ","+objeto.valor1+","+objeto.valor2+">")
                                 sys.exit("Error: No se cerro comentario multilinea.")
                             elif estado_actual=="q2" or estado_actual=="q1":
-                                sys.exit("Error: No se cerro cadena.")
-                            print("Guardamos la ultima expresion si es que hay")
-                            print(estado_anterior)
-                            print(estado_actual)
-                            print(estado_siguiente)
+                                print("Antes de cerrar por Error: se imprime objetois que se lograron guardar")
+                                for objeto in lista_objetos:
+                                    print("<"+objeto.tipo + ","+objeto.valor1+","+objeto.valor2+">")
+                                sys.exit("Error: No se cerro cadena en el ultimo token String.")
+                            #print("Guardamos la ultima expresion si es que hay")
+                            #print(estado_anterior)
+                            #print(estado_actual)
+                            #print(estado_siguiente)
                             
                             if estado_siguiente =="q0":
                                 #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
-                                print("Estamos a punto de guardar YA QUE ESTADO SIG ES Q0:"+lexema)
-                                print("E actual:"+estado_actual)
+                                #print("Estamos a punto de guardar YA QUE ESTADO SIG ES Q0:"+lexema)
+                                #print("E actual:"+estado_actual)
                                 if estado_actual in estados_FPR:
-                                    print("Estado actual pertenece a estados finales de reservadas")
+                                    #print("Estado actual pertenece a estados finales de reservadas")
                                     if(caracter==" "):
-                                        print("quitamos espacio")
+                                        #print("quitamos espacio")
                                         lexema = lexema[:-1]
                                     else:
                                         lexema = lexema[:-1] 
                                         memoria+=caracter
-                                    print(lexema+"in reservadas")
+                                    #print(lexema+"in reservadas")
                                     if lexema in palabras_reservadas:
                                         print("yes")
                                         objeto=MisTokens(lexema.upper(),lexema,"null")
@@ -243,8 +247,8 @@ def analizar_codigo(ruta_archivo,caso):
                                         else:
                                             lexema=""
                                     else:
-                                        print("El objeto guardado fue:"+lexema)
-                                        input("Que paso")
+                                        #print("El objeto guardado fue:"+lexema)
+                                        #input("Que paso")
                                         objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                         lista_objetos.append(objeto)
                                         guardar_como_any=0
@@ -255,7 +259,7 @@ def analizar_codigo(ruta_archivo,caso):
                                 elif estado_actual =="q3":
                                     lexema = lexema[:-1]
                                     memoria+=caracter
-                                    print("se guardo"+lexema)
+                                    #print("se guardo"+lexema)
                                     objeto=MisTokens("ENTERO",lexema,lexema)
                                     lista_objetos.append(objeto)
                                     if caracter==" ":
@@ -302,7 +306,7 @@ def analizar_codigo(ruta_archivo,caso):
                                 elif estado_actual =="q7":
                                     lexema = lexema[:-1]
                                     memoria+=caracter
-                                    print("guardamos:"+lexema)
+                                    #print("guardamos:"+lexema)
                                     objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                     lista_objetos.append(objeto)
                                     if caracter==" ":
@@ -333,7 +337,7 @@ def analizar_codigo(ruta_archivo,caso):
                                 elif estado_actual=="q0":
                                     
                                     #verificamos de donde viene
-                                    print("estado anterior:"+estado_anterior)
+                                    #print("estado anterior:"+estado_anterior)
                                     #if estado_anterior==
                                     #Hubo un espacio inecesario
                                     lexema=""
@@ -341,9 +345,9 @@ def analizar_codigo(ruta_archivo,caso):
                             elif (estado_siguiente=="q2" or estado_siguiente=="q1") and (estado_actual in estados_FPR):
                                 lexema = lexema[:-1] 
                                 memoria+=caracter
-                                print(lexema+"in reservadas")
+                                #print(lexema+"in reservadas")
                                 if lexema in palabras_reservadas:
-                                    print("yes")
+                                    #print("yes")
                                     objeto=MisTokens(lexema.upper(),lexema,"null")
                                     lista_objetos.append(objeto)
                                     guardar_como_any=1
@@ -353,8 +357,8 @@ def analizar_codigo(ruta_archivo,caso):
                                     else:
                                         lexema=""
                                 else:
-                                    print("El objeto guardado fue:"+lexema)
-                                    input("Que paso")
+                                    #print("El objeto guardado fue:"+lexema)
+                                    #input("Que paso")
                                     objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                     lista_objetos.append(objeto)
                                     guardar_como_any=1
@@ -365,22 +369,22 @@ def analizar_codigo(ruta_archivo,caso):
                                         lexema=""
                             
                             elif estado_siguiente=="q500":
-                                print("En q500")
+                                #print("En q500")
                                 #Es posiblemente id, asi que verificamos
                                 #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
-                                print("Estamos a punto de guardar, recibimos algo y venimos un estado qn:"+lexema)
-                                print("E actual:"+estado_actual)
+                                #print("Estamos a punto de guardar, recibimos algo y venimos un estado qn:"+lexema)
+                                #print("E actual:"+estado_actual)
                                 if estado_actual in estados_FPR:
-                                    print("Estado actual pertenece a estados finales de reservadas")
+                                    #print("Estado actual pertenece a estados finales de reservadas")
                                     if(caracter==" "):
-                                        print("quitamos espacio")
+                                        #print("quitamos espacio")
                                         lexema = lexema[:-1]
                                     else:
                                         lexema = lexema[:-1] 
                                         memoria+=caracter
-                                    print(lexema+"in reservadas")
+                                    #print(lexema+"in reservadas")
                                     if lexema in palabras_reservadas:
-                                        print("yes")
+                                        #print("yes")
                                         objeto=MisTokens(lexema.upper(),lexema,"null")
                                         lista_objetos.append(objeto)
                                         guardar_como_any=0
@@ -390,7 +394,7 @@ def analizar_codigo(ruta_archivo,caso):
                                         else:
                                             lexema=""
                                     else:
-                                        print("El objeto guardado fue:"+lexema)
+                                        #print("El objeto guardado fue:"+lexema)
                                         input("Que paso")
                                         objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                         lista_objetos.append(objeto)
@@ -402,7 +406,7 @@ def analizar_codigo(ruta_archivo,caso):
                                 elif estado_actual =="q3":
                                     lexema = lexema[:-1]
                                     memoria+=caracter
-                                    print("se guardo"+lexema)
+                                    #print("se guardo"+lexema)
                                     objeto=MisTokens("ENTERO",lexema,lexema)
                                     lista_objetos.append(objeto)
                                     if caracter==" ":
@@ -449,7 +453,7 @@ def analizar_codigo(ruta_archivo,caso):
                                 elif estado_actual =="q7":
                                     lexema = lexema[:-1]
                                     memoria+=caracter
-                                    print("guardamos:"+lexema)
+                                    #print("guardamos:"+lexema)
                                     objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                     lista_objetos.append(objeto)
                                     if caracter==" ":
@@ -479,7 +483,7 @@ def analizar_codigo(ruta_archivo,caso):
                                     guardar_como_any=0
                                 elif estado_actual=="q0":
                                     #verificamos de donde viene
-                                    print("estado anterior:"+estado_anterior)
+                                    print("")
                                     #if estado_anterior==
                                     #Hubo un espacio inecesario
                                     #lexema=""
@@ -500,19 +504,19 @@ def analizar_codigo(ruta_archivo,caso):
 
                             elif estado_siguiente=="q7":
                                 #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
-                                print("Estamos a punto de guardar, recibimos un simbolo y venimos un estado qn:"+lexema)
-                                print("E actual:"+estado_actual)
+                                #print("Estamos a punto de guardar, recibimos un simbolo y venimos un estado qn:"+lexema)
+                                #print("E actual:"+estado_actual)
                                 if estado_actual in estados_FPR:
-                                    print("Estado actual pertenece a estados finales de reservadas")
+                                    #print("Estado actual pertenece a estados finales de reservadas")
                                     if(caracter==" "):
-                                        print("quitamos espacio")
+                                        #print("quitamos espacio")
                                         lexema = lexema[:-1]
                                     else:
                                         lexema = lexema[:-1] 
                                         memoria+=caracter
-                                    print(lexema+"in reservadas")
+                                    #print(lexema+"in reservadas")
                                     if lexema in palabras_reservadas:
-                                        print("yes")
+                                        #print("yes")
                                         objeto=MisTokens(lexema.upper(),lexema,"null")
                                         lista_objetos.append(objeto)
                                         guardar_como_any=0
@@ -522,7 +526,7 @@ def analizar_codigo(ruta_archivo,caso):
                                         else:
                                             lexema=""
                                     else:
-                                        print("El objeto guardado fue:"+lexema)
+                                        #print("El objeto guardado fue:"+lexema)
                                         input("Que paso")
                                         objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                         lista_objetos.append(objeto)
@@ -534,7 +538,7 @@ def analizar_codigo(ruta_archivo,caso):
                                 elif estado_actual =="q3":
                                     lexema = lexema[:-1]
                                     memoria+=caracter
-                                    print("se guardo"+lexema)
+                                    #print("se guardo"+lexema)
                                     objeto=MisTokens("ENTERO",lexema,lexema)
                                     lista_objetos.append(objeto)
                                     if caracter==" ":
@@ -600,20 +604,20 @@ def analizar_codigo(ruta_archivo,caso):
                                     guardar_como_any=0
                                 elif estado_actual=="q0":
                                     #verificamos de donde viene
-                                    print("estado anterior:"+estado_anterior)
+                                    print("")
                                     #if estado_anterior==
                                     #Hubo un espacio inecesario
                                     #lexema=""
 
                             else:
                                 if estado_actual=="q7":
-                                    print("Estamos a punto de guardar, venimos de simbolo hacia opciones:"+lexema)
-                                    print("E actual:"+estado_actual)
+                                    #print("Estamos a punto de guardar, venimos de simbolo hacia opciones:"+lexema)
+                                    #print("E actual:"+estado_actual)
                                     #if caracter not in estados_nfa.get(estado_actual, {}):
                                     if caracter in PosiblesPR:
                                         lexema = lexema[:-1]
                                         memoria+=caracter
-                                        print("guardamos:"+lexema)
+                                        #print("guardamos:"+lexema)
                                         objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                         lista_objetos.append(objeto)
                                         if caracter==" ":
@@ -628,16 +632,16 @@ def analizar_codigo(ruta_archivo,caso):
                                         guardar_como_any=0
                                 
                                 elif estado_actual in estados_FPR:
-                                    print("Estado actual pertenece a estados finales de reservadas")
+                                    #print("Estado actual pertenece a estados finales de reservadas")
                                     if(caracter==" "):
-                                        print("quitamos espacio")
+                                        #print("quitamos espacio")
                                         lexema = lexema[:-1]
                                     else:
                                         #lexema = lexema[:-1] 
                                         memoria+=caracter
-                                    print(lexema+"in reservadas")
+                                    #print(lexema+"in reservadas")
                                     if lexema in palabras_reservadas:
-                                        print("yes")
+                                        #print("yes")
                                         objeto=MisTokens(lexema.upper(),lexema,"null")
                                         lista_objetos.append(objeto)
                                         guardar_como_any=0
@@ -647,8 +651,8 @@ def analizar_codigo(ruta_archivo,caso):
                                         else:
                                             lexema=""
                                     else:
-                                        print("El objeto guardado fue:"+lexema)
-                                        input("Que paso")
+                                        #print("El objeto guardado fue:"+lexema)
+                                        #input("Que paso")
                                         objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                         lista_objetos.append(objeto)
                                         guardar_como_any=0
@@ -656,10 +660,10 @@ def analizar_codigo(ruta_archivo,caso):
                             break  # Fin del archivo
                         elif BanderaT1==1:# Comentario 1
                             if caracter=="\n":
-                                print("Caracter de salto de linea. Se vuele a leer")
-                                print("t1estado_anterior"+estado_anterior)
-                                print("t1estado actual:"+estado_actual)
-                                print("t1estado siguiente:"+estado_siguiente)
+                                #print("Caracter de salto de linea. Se vuele a leer")
+                                #print("t1estado_anterior"+estado_anterior)
+                                #print("t1estado actual:"+estado_actual)
+                                #print("t1estado siguiente:"+estado_siguiente)
                                 lexema=""
                                 BanderaT1=0
                                 guardar_como_any=0
@@ -680,9 +684,9 @@ def analizar_codigo(ruta_archivo,caso):
                                     guardar_como_any=0
                                     lexema=""
                                     estado_actual=estado_inicial
-                                    print("t2estado_anterior"+estado_anterior)
-                                    print("t2estado actual:"+estado_actual)
-                                    print("t2estado siguiente:"+estado_siguiente)
+                                    #print("t2estado_anterior"+estado_anterior)
+                                    #print("t2estado actual:"+estado_actual)
+                                    #print("t2estado siguiente:"+estado_siguiente)
                                 else:
                                     #Reset de lectura
                                     primero=1
@@ -690,26 +694,26 @@ def analizar_codigo(ruta_archivo,caso):
                                     caracter_esperado=""
                                 
                         else:
-                            print("Caracter actual--:"+caracter)
+                            #print("Caracter actual--:"+caracter)
                             if caracter=="\n":
                                 guardar_como_any=0
-                                print("estado_anterior"+estado_anterior)
-                                print("estado actual:"+estado_actual)
+                                #print("estado_anterior"+estado_anterior)
+                                #print("estado actual:"+estado_actual)
                                 estado_siguiente=estado_inicial
-                                print("estado siguiente:"+estado_siguiente)
-                                print("Caracter de salto de linea implicito.")
-                                print("LEXEMA ACTUAL:"+lexema)
+                                #print("estado siguiente:"+estado_siguiente)
+                                #print("Caracter de salto de linea implicito.")
+                                #print("LEXEMA ACTUAL:"+lexema)
                                 if estado_actual in estados_FPR:
-                                    print("Estado actual pertenece a estados finales de reservadas")
+                                    #print("Estado actual pertenece a estados finales de reservadas")
                                     if(caracter==" "):
-                                        print("quitamos espacio")
+                                        #print("quitamos espacio")
                                         lexema = lexema[:-1]
                                     else:
                                         lexema = lexema[:-1] 
                                         memoria+=caracter
-                                    print(lexema+"in reservadas")
+                                    #print(lexema+"in reservadas")
                                     if lexema in palabras_reservadas:
-                                        print("yes")
+                                        #print("yes")
                                         objeto=MisTokens(lexema.upper(),lexema,"null")
                                         lista_objetos.append(objeto)
                                         guardar_como_any=0
@@ -719,8 +723,8 @@ def analizar_codigo(ruta_archivo,caso):
                                         else:
                                             lexema=""
                                     else:
-                                        print("El objeto guardado fue:"+lexema)
-                                        input("Que paso")
+                                        #print("El objeto guardado fue:"+lexema)
+                                        #input("Que paso")
                                         objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                         lista_objetos.append(objeto)
                                         guardar_como_any=0
@@ -731,7 +735,7 @@ def analizar_codigo(ruta_archivo,caso):
                                 elif estado_actual =="q3":
                                     lexema = lexema[:-1]
                                     memoria+=caracter
-                                    print("se guardo"+lexema)
+                                    #print("se guardo"+lexema)
                                     objeto=MisTokens("ENTERO",lexema,lexema)
                                     lista_objetos.append(objeto)
                                     if caracter==" ":
@@ -778,7 +782,7 @@ def analizar_codigo(ruta_archivo,caso):
                                 elif estado_actual =="q7":
                                     #lexema = lexema[:-1]
                                     memoria+=caracter
-                                    print("guardamos:"+lexema)
+                                    #print("guardamos:"+lexema)
                                     objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                     lista_objetos.append(objeto)
                                     if caracter==" ":
@@ -808,7 +812,7 @@ def analizar_codigo(ruta_archivo,caso):
                                     guardar_como_any=0
                                 elif estado_actual=="q0":
                                     #verificamos de donde viene
-                                    print("estado anterior:"+estado_anterior)
+                                    #print("estado anterior:"+estado_anterior)
                                     #if estado_anterior==
                                     #Hubo un espacio inecesario
                                     lexema=""
@@ -819,13 +823,12 @@ def analizar_codigo(ruta_archivo,caso):
                                 lexema=""
                                 estado_actual=estado_inicial
                                 if estado_actual=="q2" or estado_actual=="q1":
-                                    sys.exit("Error: No se cerro cadena.")
-                                    
+                                    sys.exit("Error: No se cerro cadena.")                           
                             else:
                                 lexema+=caracter
-                                print(caracter)
-                                print(estado_actual)
-                                print("LEXEMA ACTUAL:"+lexema)
+                                #print(caracter)
+                                #print(estado_actual)
+                                #print("LEXEMA ACTUAL:"+lexema)
                                 #En dicha variable guardaremos si se trata de, Number, symbol, ", ', posible PR, o any (candidata a ID)
                                 caso=""
                                 #Debemos evaluar de que tipo de letra se trata, llamamos a evaluadores/Interpretes
@@ -834,7 +837,7 @@ def analizar_codigo(ruta_archivo,caso):
                                 else:
                                     guardar_como_any=1
                                 caso=interprete(caracter,simbolos,PosiblesPR,guardar_como_any)
-                                print("caso:"+caso)
+                                #print("caso:"+caso)
                                 if inicio==1:
                                     inicio=1
                                     if caso == "'":
@@ -856,24 +859,25 @@ def analizar_codigo(ruta_archivo,caso):
                                         #estado_anterior=estado_actual
                                         estado_siguiente = next(iter(estados_nfa[estado_actual][caso]))
                                     
-                                    print("Estado actual:"+estado_actual)
-                                    print("Estado siguiente:"+estado_siguiente)
-                                    
+                                    #print("Estado actual:"+estado_actual)
+                                    #print("Estado siguiente:"+estado_siguiente)
+
+
                                     if estado_siguiente =="q0":
                                         #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
-                                        print("Estamos a punto de guardar YA QUE ESTADO SIG ES Q0:"+lexema)
-                                        print("E actual:"+estado_actual)
+                                        #print("Estamos a punto de guardar YA QUE ESTADO SIG ES Q0:"+lexema)
+                                        #print("E actual:"+estado_actual)
                                         if estado_actual in estados_FPR:
-                                            print("Estado actual pertenece a estados finales de reservadas")
+                                            #print("Estado actual pertenece a estados finales de reservadas")
                                             if(caracter==" "):
-                                                print("quitamos espacio")
+                                                #print("quitamos espacio")
                                                 lexema = lexema[:-1]
                                             else:
                                                 lexema = lexema[:-1] 
                                                 memoria+=caracter
-                                            print(lexema+"in reservadas")
+                                            #print(lexema+"in reservadas")
                                             if lexema in palabras_reservadas:
-                                                print("yes")
+                                                #print("yes")
                                                 objeto=MisTokens(lexema.upper(),lexema,"null")
                                                 lista_objetos.append(objeto)
                                                 guardar_como_any=0
@@ -883,19 +887,33 @@ def analizar_codigo(ruta_archivo,caso):
                                                 else:
                                                     lexema=""
                                             else:
-                                                print("El objeto guardado fue:"+lexema)
-                                                input("Que paso")
+                                                #print("El objeto guardado fue:"+lexema)
+                                                #input("Que paso")
                                                 objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                                 lista_objetos.append(objeto)
                                                 guardar_como_any=0
                                         elif estado_actual in estados_FString:
+                                            #lexema = lexema[:-1]
+                                            memoria+=caracter
+                                            #print("guardamos:"+lexema)
                                             objeto=MisTokens("STRING",lexema,"null")
                                             lista_objetos.append(objeto)
+                                            if caracter==" ":
+                                                lexema=""
+                                                memoria=""
+                                            else:   
+                                                if memoria:
+                                                    lexema=memoria
+                                                    memoria=""
+                                                    lexema=""
+                                                else:
+                                                    lexema=""
+                                            
                                             guardar_como_any=0
                                         elif estado_actual =="q3":
                                             lexema = lexema[:-1]
                                             memoria+=caracter
-                                            print("se guardo"+lexema)
+                                            #print("se guardo"+lexema)
                                             objeto=MisTokens("ENTERO",lexema,lexema)
                                             lista_objetos.append(objeto)
                                             if caracter==" ":
@@ -942,7 +960,7 @@ def analizar_codigo(ruta_archivo,caso):
                                         elif estado_actual =="q7":
                                             lexema = lexema[:-1]
                                             memoria+=caracter
-                                            print("guardamos:"+lexema)
+                                            #print("guardamos:"+lexema)
                                             objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                             lista_objetos.append(objeto)
                                             if caracter==" ":
@@ -972,10 +990,11 @@ def analizar_codigo(ruta_archivo,caso):
                                             guardar_como_any=0
                                         elif estado_actual=="q0":
                                             #verificamos de donde viene
-                                            print("estado anterior:"+estado_anterior)
+                                            #print("estado anterior:"+estado_anterior)
                                             #if estado_anterior==
                                             #Hubo un espacio inecesario
                                             lexema=""
+                                        
                                         else:
                                             lexema = lexema[:-1]
                                             memoria+=caracter
@@ -997,9 +1016,9 @@ def analizar_codigo(ruta_archivo,caso):
                                     elif (estado_siguiente=="q2" or estado_siguiente=="q1") and (estado_actual in estados_FPR):
                                         lexema = lexema[:-1] 
                                         memoria+=caracter
-                                        print(lexema+"in reservadas")
+                                        #print(lexema+"in reservadas")
                                         if lexema in palabras_reservadas:
-                                            print("yes")
+                                            #print("yes")
                                             objeto=MisTokens(lexema.upper(),lexema,"null")
                                             lista_objetos.append(objeto)
                                             guardar_como_any=1
@@ -1009,8 +1028,8 @@ def analizar_codigo(ruta_archivo,caso):
                                             else:
                                                 lexema=""
                                         else:
-                                            print("El objeto guardado fue:"+lexema)
-                                            input("Que paso")
+                                            #print("El objeto guardado fue:"+lexema)
+                                            #input("Que paso")
                                             objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                             lista_objetos.append(objeto)
                                             guardar_como_any=1
@@ -1023,7 +1042,7 @@ def analizar_codigo(ruta_archivo,caso):
                                         if estado_actual=="q7":
                                             lexema = lexema[:-1]
                                             memoria+=caracter
-                                            print("guardamos:"+lexema)
+                                            #print("guardamos:"+lexema)
                                             objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                             lista_objetos.append(objeto)
                                             if caracter==" ":
@@ -1037,22 +1056,22 @@ def analizar_codigo(ruta_archivo,caso):
                                                     lexema=""
                                             guardar_como_any=0
                                     elif estado_siguiente=="q500":
-                                        print("En q500")
+                                        #print("En q500")
                                         #Es posiblemente id, asi que verificamos
                                         #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
-                                        print("Estamos a punto de guardar, recibimos algo y venimos un estado qn:"+lexema)
-                                        print("E actual:"+estado_actual)
-                                        if (estado_actual in estados_FPR) and caso!="any":
-                                            print("Estado actual pertenece a estados finales de reservadas")
+                                        #print("Estamos a punto de guardar, recibimos algo y venimos un estado qn:"+lexema)
+                                        #print("E actual:"+estado_actual)
+                                        if (estado_actual in estados_FPR) and ((caso!="any") and(caso!="Number")):
+                                            #print("Estado actual pertenece a estados finales de reservadas")
                                             if(caracter==" "):
-                                                print("quitamos espacio")
+                                                #print("quitamos espacio")
                                                 lexema = lexema[:-1]
                                             else:
                                                 lexema = lexema[:-1] 
                                                 memoria+=caracter
-                                            print(lexema+"in reservadas")
+                                            #print(lexema+"in reservadas")
                                             if lexema in palabras_reservadas:
-                                                print("yes")
+                                                #print("yes")
                                                 objeto=MisTokens(lexema.upper(),lexema,"null")
                                                 lista_objetos.append(objeto)
                                                 guardar_como_any=0
@@ -1062,7 +1081,7 @@ def analizar_codigo(ruta_archivo,caso):
                                                 else:
                                                     lexema=""
                                             else:
-                                                print("El objeto guardado fue:"+lexema)
+                                                #print("El objeto guardado fue:"+lexema)
                                                 input("Que paso")
                                                 objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                                 lista_objetos.append(objeto)
@@ -1074,7 +1093,7 @@ def analizar_codigo(ruta_archivo,caso):
                                         elif estado_actual =="q3":
                                             lexema = lexema[:-1]
                                             memoria+=caracter
-                                            print("se guardo"+lexema)
+                                            #print("se guardo"+lexema)
                                             objeto=MisTokens("ENTERO",lexema,lexema)
                                             lista_objetos.append(objeto)
                                             if caracter==" ":
@@ -1121,7 +1140,7 @@ def analizar_codigo(ruta_archivo,caso):
                                         elif estado_actual =="q7":
                                             lexema = lexema[:-1]
                                             memoria+=caracter
-                                            print("guardamos:"+lexema)
+                                            #print("guardamos:"+lexema)
                                             objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                             lista_objetos.append(objeto)
                                             if caracter==" ":
@@ -1136,16 +1155,27 @@ def analizar_codigo(ruta_archivo,caso):
                                             guardar_como_any=0
                                         elif estado_actual=="q0":
                                             #verificamos de donde viene
-                                            print("estado anterior:"+estado_anterior)
+                                            print("")
                                             #if estado_anterior==
                                             #Hubo un espacio inecesario
                                             #lexema=""
-                                        """
+                                        
                                         elif estado_actual=="q500":
-                                            lexema = lexema[:-1]
-                                            memoria+=caracter
-                                            objeto=MisTokens("IDENTIFICADOR",lexema,"null")
+                                            #print("Sigue con any")
+                                            guardar_como_any=1
+                                        
+                                        
+                                    
+                                        
+                                        guardar_como_any=1
+                                    elif estado_siguiente=="q60":
+                                        #Se escoge opciones de 6 casos
+                                        #print("estado anterior"+estado_anterior)
+                                        if caracter=="=" and ((estado_anterior=="q7") or(estado_actual=="q7")):
+                                            
+                                            objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                             lista_objetos.append(objeto)
+                                            estado_siguiente=estado_inicial
                                             if caracter==" ":
                                                 lexema=""
                                                 memoria=""
@@ -1153,21 +1183,10 @@ def analizar_codigo(ruta_archivo,caso):
                                                 if memoria:
                                                     lexema=memoria
                                                     memoria=""
+                                                    
                                                 else:
                                                     lexema=""
-                                            guardar_como_any=0
-                                        """
-                                        
-                                    
-                                        
-                                        guardar_como_any=1
-                                    elif estado_siguiente=="q60":
-                                        #Se escoge opciones de 6 casos
-                                        
-                                        if caracter=="=" and estado_anterior=="q7":
-                                            objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
-                                            lista_objetos.append(objeto)
-                                            estado_siguiente=estado_inicial
+                                            
                                             guardar_como_any=0
                                         elif caracter=="/":
                                             BanderaT1=1
@@ -1175,11 +1194,12 @@ def analizar_codigo(ruta_archivo,caso):
                                         elif caracter=="*":
                                             BanderaT2=1
                                             estado_siguiente=estado_inicial
+                                        
                                         else:
                                             #es otro simbolo
                                             lexema = lexema[:-1]
                                             memoria+=caracter
-                                            print("lexema"+lexema)
+                                            #print("lexema"+lexema)
                                             objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                             lista_objetos.append(objeto)
                                             if caracter==" ":
@@ -1197,19 +1217,19 @@ def analizar_codigo(ruta_archivo,caso):
                                             estado_siguiente="q7"
                                     elif estado_siguiente=="q7":
                                         #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
-                                        print("Estamos a punto de guardar, recibimos un simbolo y venimos un estado qn:"+lexema)
-                                        print("E actual:"+estado_actual)
+                                        #print("Estamos a punto de guardar, recibimos un simbolo y venimos un estado qn:"+lexema)
+                                        #print("E actual:"+estado_actual)
                                         if estado_actual in estados_FPR:
-                                            print("Estado actual pertenece a estados finales de reservadas")
+                                            #print("Estado actual pertenece a estados finales de reservadas")
                                             if(caracter==" "):
-                                                print("quitamos espacio")
+                                                #print("quitamos espacio")
                                                 lexema = lexema[:-1]
                                             else:
                                                 lexema = lexema[:-1] 
                                                 memoria+=caracter
-                                            print(lexema+"in reservadas")
+                                            #print(lexema+"in reservadas")
                                             if lexema in palabras_reservadas:
-                                                print("yes")
+                                                #print("yes")
                                                 objeto=MisTokens(lexema.upper(),lexema,"null")
                                                 lista_objetos.append(objeto)
                                                 guardar_como_any=0
@@ -1219,8 +1239,8 @@ def analizar_codigo(ruta_archivo,caso):
                                                 else:
                                                     lexema=""
                                             else:
-                                                print("El objeto guardado fue:"+lexema)
-                                                input("Que paso")
+                                                #print("El objeto guardado fue:"+lexema)
+                                                #input("Que paso")
                                                 objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                                 lista_objetos.append(objeto)
                                                 guardar_como_any=0
@@ -1229,21 +1249,25 @@ def analizar_codigo(ruta_archivo,caso):
                                             lista_objetos.append(objeto)
                                             guardar_como_any=0
                                         elif estado_actual =="q3":
-                                            lexema = lexema[:-1]
-                                            memoria+=caracter
-                                            print("se guardo"+lexema)
-                                            objeto=MisTokens("ENTERO",lexema,lexema)
-                                            lista_objetos.append(objeto)
-                                            if caracter==" ":
-                                                lexema=""
-                                                memoria=""
-                                            else:   
-                                                if memoria:
-                                                    lexema=memoria
-                                                    memoria=""
-                                                else:
+                                            if caracter==".":
+                                                #print("Aun no guardamos, puede ser decimal")
+                                                estado_siguiente="q5"
+                                            else:
+                                                lexema = lexema[:-1]
+                                                memoria+=caracter
+                                                #print("se guardo"+lexema)
+                                                objeto=MisTokens("ENTERO",lexema,lexema)
+                                                lista_objetos.append(objeto)
+                                                if caracter==" ":
                                                     lexema=""
-                                            guardar_como_any=0
+                                                    memoria=""
+                                                else:   
+                                                    if memoria:
+                                                        lexema=memoria
+                                                        memoria=""
+                                                    else:
+                                                        lexema=""
+                                                guardar_como_any=0
                                             
                                         elif estado_actual =="q4":
                                             lexema = lexema[:-1]
@@ -1297,19 +1321,34 @@ def analizar_codigo(ruta_archivo,caso):
                                             guardar_como_any=0
                                         elif estado_actual=="q0":
                                             #verificamos de donde viene
-                                            print("estado anterior:"+estado_anterior)
+                                            print("")
                                             #Hubo un espacio inecesario
                                             #lexema=""
-
+                                        
+                                        else:
+                                            lexema = lexema[:-1]
+                                            memoria+=caracter
+                                            objeto=MisTokens("IDENTIFICADOR",lexema,lexema)
+                                            lista_objetos.append(objeto)
+                                            if caracter==" ":
+                                                lexema=""
+                                                memoria=""
+                                            else:   
+                                                if memoria:
+                                                    lexema=memoria
+                                                    memoria=""
+                                                else:
+                                                    lexema=""
+                                            guardar_como_any=0
                                     else:
                                         if estado_actual=="q7":
-                                            print("Estamos a punto de guardar, venimos de simbolo hacia opciones:"+lexema)
-                                            print("E actual:"+estado_actual)
+                                            #print("Estamos a punto de guardar, venimos de simbolo hacia opciones:"+lexema)
+                                            #print("E actual:"+estado_actual)
                                             #if caracter not in estados_nfa.get(estado_actual, {}):
                                             if caracter in PosiblesPR:
                                                 lexema = lexema[:-1]
                                                 memoria+=caracter
-                                                print("guardamos:"+lexema)
+                                                #print("guardamos:"+lexema)
                                                 objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                                 lista_objetos.append(objeto)
                                                 if caracter==" ":
@@ -1325,7 +1364,7 @@ def analizar_codigo(ruta_archivo,caso):
                                                 
                         estado_anterior=estado_actual        
                         estado_actual=estado_siguiente        
-                        print()
+                        #print()
                             
                         contador_caracteres += 1
                         
@@ -1371,26 +1410,26 @@ def analizar_codigo(ruta_archivo,caso):
                     sys.exit("Error: No se cerro comentario multilinea.")
                 elif estado_actual=="q2" or estado_actual=="q1":
                     sys.exit("Error: No se cerro cadena.")
-                print("Guardamos la ultima expresion si es que hay")
-                print(estado_anterior)
-                print(estado_actual)
-                print(estado_siguiente)
+                #print("Guardamos la ultima expresion si es que hay")
+                #print(estado_anterior)
+                #print(estado_actual)
+                #print(estado_siguiente)
                 
                 if estado_siguiente =="q0":
                     #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
-                    print("Estamos a punto de guardar YA QUE ESTADO SIG ES Q0:"+lexema)
-                    print("E actual:"+estado_actual)
+                    #print("Estamos a punto de guardar YA QUE ESTADO SIG ES Q0:"+lexema)
+                    #print("E actual:"+estado_actual)
                     if estado_actual in estados_FPR:
-                        print("Estado actual pertenece a estados finales de reservadas")
+                        #print("Estado actual pertenece a estados finales de reservadas")
                         if(caracter==" "):
-                            print("quitamos espacio")
+                            #print("quitamos espacio")
                             lexema = lexema[:-1]
                         else:
                             lexema = lexema[:-1] 
                             memoria+=caracter
-                        print(lexema+"in reservadas")
+                        #print(lexema+"in reservadas")
                         if lexema in palabras_reservadas:
-                            print("yes")
+                            #print("yes")
                             objeto=MisTokens(lexema.upper(),lexema,"null")
                             lista_objetos.append(objeto)
                             guardar_como_any=0
@@ -1400,8 +1439,8 @@ def analizar_codigo(ruta_archivo,caso):
                             else:
                                 lexema=""
                         else:
-                            print("El objeto guardado fue:"+lexema)
-                            input("Que paso")
+                            #print("El objeto guardado fue:"+lexema)
+                            #input("Que paso")
                             objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                             lista_objetos.append(objeto)
                             guardar_como_any=0
@@ -1412,7 +1451,7 @@ def analizar_codigo(ruta_archivo,caso):
                     elif estado_actual =="q3":
                         lexema = lexema[:-1]
                         memoria+=caracter
-                        print("se guardo"+lexema)
+                        #print("se guardo"+lexema)
                         objeto=MisTokens("ENTERO",lexema,lexema)
                         lista_objetos.append(objeto)
                         if caracter==" ":
@@ -1459,7 +1498,7 @@ def analizar_codigo(ruta_archivo,caso):
                     elif estado_actual =="q7":
                         lexema = lexema[:-1]
                         memoria+=caracter
-                        print("guardamos:"+lexema)
+                        #print("guardamos:"+lexema)
                         objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                         lista_objetos.append(objeto)
                         if caracter==" ":
@@ -1490,7 +1529,7 @@ def analizar_codigo(ruta_archivo,caso):
                     elif estado_actual=="q0":
                         
                         #verificamos de donde viene
-                        print("estado anterior:"+estado_anterior)
+                        #print("estado anterior:"+estado_anterior)
                         #if estado_anterior==
                         #Hubo un espacio inecesario
                         lexema=""
@@ -1498,9 +1537,9 @@ def analizar_codigo(ruta_archivo,caso):
                 elif (estado_siguiente=="q2" or estado_siguiente=="q1") and (estado_actual in estados_FPR):
                     lexema = lexema[:-1] 
                     memoria+=caracter
-                    print(lexema+"in reservadas")
+                    #print(lexema+"in reservadas")
                     if lexema in palabras_reservadas:
-                        print("yes")
+                        #print("yes")
                         objeto=MisTokens(lexema.upper(),lexema,"null")
                         lista_objetos.append(objeto)
                         guardar_como_any=1
@@ -1510,8 +1549,8 @@ def analizar_codigo(ruta_archivo,caso):
                         else:
                             lexema=""
                     else:
-                        print("El objeto guardado fue:"+lexema)
-                        input("Que paso")
+                        #print("El objeto guardado fue:"+lexema)
+                        #input("Que paso")
                         objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                         lista_objetos.append(objeto)
                         guardar_como_any=1
@@ -1522,22 +1561,22 @@ def analizar_codigo(ruta_archivo,caso):
                             lexema=""
                 
                 elif estado_siguiente=="q500":
-                    print("En q500")
+                    #print("En q500")
                     #Es posiblemente id, asi que verificamos
                     #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
-                    print("Estamos a punto de guardar, recibimos algo y venimos un estado qn:"+lexema)
-                    print("E actual:"+estado_actual)
+                    #print("Estamos a punto de guardar, recibimos algo y venimos un estado qn:"+lexema)
+                    #print("E actual:"+estado_actual)
                     if estado_actual in estados_FPR:
-                        print("Estado actual pertenece a estados finales de reservadas")
+                        #print("Estado actual pertenece a estados finales de reservadas")
                         if(caracter==" "):
-                            print("quitamos espacio")
+                            #print("quitamos espacio")
                             lexema = lexema[:-1]
                         else:
                             lexema = lexema[:-1] 
                             memoria+=caracter
-                        print(lexema+"in reservadas")
+                        #print(lexema+"in reservadas")
                         if lexema in palabras_reservadas:
-                            print("yes")
+                            #print("yes")
                             objeto=MisTokens(lexema.upper(),lexema,"null")
                             lista_objetos.append(objeto)
                             guardar_como_any=0
@@ -1547,8 +1586,8 @@ def analizar_codigo(ruta_archivo,caso):
                             else:
                                 lexema=""
                         else:
-                            print("El objeto guardado fue:"+lexema)
-                            input("Que paso")
+                            #print("El objeto guardado fue:"+lexema)
+                            #input("Que paso")
                             objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                             lista_objetos.append(objeto)
                             guardar_como_any=0
@@ -1559,7 +1598,7 @@ def analizar_codigo(ruta_archivo,caso):
                     elif estado_actual =="q3":
                         lexema = lexema[:-1]
                         memoria+=caracter
-                        print("se guardo"+lexema)
+                        #print("se guardo"+lexema)
                         objeto=MisTokens("ENTERO",lexema,lexema)
                         lista_objetos.append(objeto)
                         if caracter==" ":
@@ -1606,7 +1645,7 @@ def analizar_codigo(ruta_archivo,caso):
                     elif estado_actual =="q7":
                         lexema = lexema[:-1]
                         memoria+=caracter
-                        print("guardamos:"+lexema)
+                        #print("guardamos:"+lexema)
                         objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                         lista_objetos.append(objeto)
                         if caracter==" ":
@@ -1636,7 +1675,7 @@ def analizar_codigo(ruta_archivo,caso):
                         guardar_como_any=0
                     elif estado_actual=="q0":
                         #verificamos de donde viene
-                        print("estado anterior:"+estado_anterior)
+                        print("")
                         #if estado_anterior==
                         #Hubo un espacio inecesario
                         #lexema=""
@@ -1657,19 +1696,19 @@ def analizar_codigo(ruta_archivo,caso):
 
                 elif estado_siguiente=="q7":
                     #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
-                    print("Estamos a punto de guardar, recibimos un simbolo y venimos un estado qn:"+lexema)
-                    print("E actual:"+estado_actual)
+                    #print("Estamos a punto de guardar, recibimos un simbolo y venimos un estado qn:"+lexema)
+                    #print("E actual:"+estado_actual)
                     if estado_actual in estados_FPR:
-                        print("Estado actual pertenece a estados finales de reservadas")
+                        #print("Estado actual pertenece a estados finales de reservadas")
                         if(caracter==" "):
-                            print("quitamos espacio")
+                            #print("quitamos espacio")
                             lexema = lexema[:-1]
                         else:
                             lexema = lexema[:-1] 
                             memoria+=caracter
-                        print(lexema+"in reservadas")
+                        #print(lexema+"in reservadas")
                         if lexema in palabras_reservadas:
-                            print("yes")
+                            #print("yes")
                             objeto=MisTokens(lexema.upper(),lexema,"null")
                             lista_objetos.append(objeto)
                             guardar_como_any=0
@@ -1679,7 +1718,7 @@ def analizar_codigo(ruta_archivo,caso):
                             else:
                                 lexema=""
                         else:
-                            print("El objeto guardado fue:"+lexema)
+                            #print("El objeto guardado fue:"+lexema)
                             input("Que paso")
                             objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                             lista_objetos.append(objeto)
@@ -1691,7 +1730,7 @@ def analizar_codigo(ruta_archivo,caso):
                     elif estado_actual =="q3":
                         lexema = lexema[:-1]
                         memoria+=caracter
-                        print("se guardo"+lexema)
+                        #print("se guardo"+lexema)
                         objeto=MisTokens("ENTERO",lexema,lexema)
                         lista_objetos.append(objeto)
                         if caracter==" ":
@@ -1757,20 +1796,20 @@ def analizar_codigo(ruta_archivo,caso):
                         guardar_como_any=0
                     elif estado_actual=="q0":
                         #verificamos de donde viene
-                        print("estado anterior:"+estado_anterior)
+                        print("")
                         #if estado_anterior==
                         #Hubo un espacio inecesario
                         #lexema=""
 
                 else:
                     if estado_actual=="q7":
-                        print("Estamos a punto de guardar, venimos de simbolo hacia opciones:"+lexema)
-                        print("E actual:"+estado_actual)
+                        #print("Estamos a punto de guardar, venimos de simbolo hacia opciones:"+lexema)
+                        #print("E actual:"+estado_actual)
                         #if caracter not in estados_nfa.get(estado_actual, {}):
                         if caracter in PosiblesPR:
                             lexema = lexema[:-1]
                             memoria+=caracter
-                            print("guardamos:"+lexema)
+                            #print("guardamos:"+lexema)
                             objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                             lista_objetos.append(objeto)
                             if caracter==" ":
@@ -1785,16 +1824,16 @@ def analizar_codigo(ruta_archivo,caso):
                             guardar_como_any=0
                     
                     elif estado_actual in estados_FPR:
-                        print("Estado actual pertenece a estados finales de reservadas")
+                        #print("Estado actual pertenece a estados finales de reservadas")
                         if(caracter==" "):
-                            print("quitamos espacio")
+                            #print("quitamos espacio")
                             lexema = lexema[:-1]
                         else:
                             #lexema = lexema[:-1] 
                             memoria+=caracter
-                        print(lexema+"in reservadas")
+                        #print(lexema+"in reservadas")
                         if lexema in palabras_reservadas:
-                            print("yes")
+                            #print("yes")
                             objeto=MisTokens(lexema.upper(),lexema,"null")
                             lista_objetos.append(objeto)
                             guardar_como_any=0
@@ -1804,8 +1843,8 @@ def analizar_codigo(ruta_archivo,caso):
                             else:
                                 lexema=""
                         else:
-                            print("El objeto guardado fue:"+lexema)
-                            input("Que paso")
+                            #print("El objeto guardado fue:"+lexema)
+                            #input("Que paso")
                             objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                             lista_objetos.append(objeto)
                             guardar_como_any=0
@@ -1813,10 +1852,10 @@ def analizar_codigo(ruta_archivo,caso):
                 break  # Fin del archivo
             elif BanderaT1==1:# Comentario 1
                 if caracter=="\n":
-                    print("Caracter de salto de linea. Se vuele a leer")
-                    print("t1estado_anterior"+estado_anterior)
-                    print("t1estado actual:"+estado_actual)
-                    print("t1estado siguiente:"+estado_siguiente)
+                    #print("Caracter de salto de linea. Se vuele a leer")
+                    #print("t1estado_anterior"+estado_anterior)
+                    #print("t1estado actual:"+estado_actual)
+                    #print("t1estado siguiente:"+estado_siguiente)
                     lexema=""
                     BanderaT1=0
                     guardar_como_any=0
@@ -1837,9 +1876,9 @@ def analizar_codigo(ruta_archivo,caso):
                         guardar_como_any=0
                         lexema=""
                         estado_actual=estado_inicial
-                        print("t2estado_anterior"+estado_anterior)
-                        print("t2estado actual:"+estado_actual)
-                        print("t2estado siguiente:"+estado_siguiente)
+                        #print("t2estado_anterior"+estado_anterior)
+                        #print("t2estado actual:"+estado_actual)
+                        #print("t2estado siguiente:"+estado_siguiente)
                     else:
                         #Reset de lectura
                         primero=1
@@ -1847,26 +1886,26 @@ def analizar_codigo(ruta_archivo,caso):
                         caracter_esperado=""
                     
             else:
-                print("Caracter actual--:"+caracter)
+                #print("Caracter actual--:"+caracter)
                 if caracter=="\n":
                     guardar_como_any=0
-                    print("estado_anterior"+estado_anterior)
-                    print("estado actual:"+estado_actual)
+                    #print("estado_anterior"+estado_anterior)
+                    #print("estado actual:"+estado_actual)
                     estado_siguiente=estado_inicial
-                    print("estado siguiente:"+estado_siguiente)
-                    print("Caracter de salto de linea implicito.")
-                    print("LEXEMA ACTUAL:"+lexema)
+                    #print("estado siguiente:"+estado_siguiente)
+                    #print("Caracter de salto de linea implicito.")
+                    #print("LEXEMA ACTUAL:"+lexema)
                     if estado_actual in estados_FPR:
-                        print("Estado actual pertenece a estados finales de reservadas")
+                        #print("Estado actual pertenece a estados finales de reservadas")
                         if(caracter==" "):
-                            print("quitamos espacio")
+                            #print("quitamos espacio")
                             lexema = lexema[:-1]
                         else:
                             lexema = lexema[:-1] 
                             memoria+=caracter
-                        print(lexema+"in reservadas")
+                        #print(lexema+"in reservadas")
                         if lexema in palabras_reservadas:
-                            print("yes")
+                            #print("yes")
                             objeto=MisTokens(lexema.upper(),lexema,"null")
                             lista_objetos.append(objeto)
                             guardar_como_any=0
@@ -1876,8 +1915,8 @@ def analizar_codigo(ruta_archivo,caso):
                             else:
                                 lexema=""
                         else:
-                            print("El objeto guardado fue:"+lexema)
-                            input("Que paso")
+                            #print("El objeto guardado fue:"+lexema)
+                            #input("Que paso")
                             objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                             lista_objetos.append(objeto)
                             guardar_como_any=0
@@ -1888,7 +1927,7 @@ def analizar_codigo(ruta_archivo,caso):
                     elif estado_actual =="q3":
                         lexema = lexema[:-1]
                         memoria+=caracter
-                        print("se guardo"+lexema)
+                        #print("se guardo"+lexema)
                         objeto=MisTokens("ENTERO",lexema,lexema)
                         lista_objetos.append(objeto)
                         if caracter==" ":
@@ -1935,7 +1974,7 @@ def analizar_codigo(ruta_archivo,caso):
                     elif estado_actual =="q7":
                         #lexema = lexema[:-1]
                         memoria+=caracter
-                        print("guardamos:"+lexema)
+                        #print("guardamos:"+lexema)
                         objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                         lista_objetos.append(objeto)
                         if caracter==" ":
@@ -1965,7 +2004,7 @@ def analizar_codigo(ruta_archivo,caso):
                         guardar_como_any=0
                     elif estado_actual=="q0":
                         #verificamos de donde viene
-                        print("estado anterior:"+estado_anterior)
+                        #print("estado anterior:"+estado_anterior)
                         #if estado_anterior==
                         #Hubo un espacio inecesario
                         lexema=""
@@ -1980,9 +2019,9 @@ def analizar_codigo(ruta_archivo,caso):
                         
                 else:
                     lexema+=caracter
-                    print(caracter)
-                    print(estado_actual)
-                    print("LEXEMA ACTUAL:"+lexema)
+                    #print(caracter)
+                    #print(estado_actual)
+                    #print("LEXEMA ACTUAL:"+lexema)
                     #En dicha variable guardaremos si se trata de, Number, symbol, ", ', posible PR, o any (candidata a ID)
                     caso=""
                     #Debemos evaluar de que tipo de letra se trata, llamamos a evaluadores/Interpretes
@@ -1991,7 +2030,7 @@ def analizar_codigo(ruta_archivo,caso):
                     else:
                         guardar_como_any=1
                     caso=interprete(caracter,simbolos,PosiblesPR,guardar_como_any)
-                    print("caso:"+caso)
+                    #print("caso:"+caso)
                     if inicio==1:
                         inicio=1
                         if caso == "'":
@@ -2013,24 +2052,24 @@ def analizar_codigo(ruta_archivo,caso):
                             #estado_anterior=estado_actual
                             estado_siguiente = next(iter(estados_nfa[estado_actual][caso]))
                         
-                        print("Estado actual:"+estado_actual)
-                        print("Estado siguiente:"+estado_siguiente)
+                        #print("Estado actual:"+estado_actual)
+                        #print("Estado siguiente:"+estado_siguiente)
                         
                         if estado_siguiente =="q0":
                             #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
-                            print("Estamos a punto de guardar YA QUE ESTADO SIG ES Q0:"+lexema)
-                            print("E actual:"+estado_actual)
+                            #print("Estamos a punto de guardar YA QUE ESTADO SIG ES Q0:"+lexema)
+                            #print("E actual:"+estado_actual)
                             if estado_actual in estados_FPR:
-                                print("Estado actual pertenece a estados finales de reservadas")
+                                #print("Estado actual pertenece a estados finales de reservadas")
                                 if(caracter==" "):
-                                    print("quitamos espacio")
+                                    #print("quitamos espacio")
                                     lexema = lexema[:-1]
                                 else:
                                     lexema = lexema[:-1] 
                                     memoria+=caracter
-                                print(lexema+"in reservadas")
+                                #print(lexema+"in reservadas")
                                 if lexema in palabras_reservadas:
-                                    print("yes")
+                                    #print("yes")
                                     objeto=MisTokens(lexema.upper(),lexema,"null")
                                     lista_objetos.append(objeto)
                                     guardar_como_any=0
@@ -2040,8 +2079,8 @@ def analizar_codigo(ruta_archivo,caso):
                                     else:
                                         lexema=""
                                 else:
-                                    print("El objeto guardado fue:"+lexema)
-                                    input("Que paso")
+                                    #print("El objeto guardado fue:"+lexema)
+                                    #input("Que paso")
                                     objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                     lista_objetos.append(objeto)
                                     guardar_como_any=0
@@ -2052,7 +2091,7 @@ def analizar_codigo(ruta_archivo,caso):
                             elif estado_actual =="q3":
                                 lexema = lexema[:-1]
                                 memoria+=caracter
-                                print("se guardo"+lexema)
+                                #print("se guardo"+lexema)
                                 objeto=MisTokens("ENTERO",lexema,lexema)
                                 lista_objetos.append(objeto)
                                 if caracter==" ":
@@ -2099,7 +2138,7 @@ def analizar_codigo(ruta_archivo,caso):
                             elif estado_actual =="q7":
                                 lexema = lexema[:-1]
                                 memoria+=caracter
-                                print("guardamos:"+lexema)
+                                #print("guardamos:"+lexema)
                                 objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                 lista_objetos.append(objeto)
                                 if caracter==" ":
@@ -2129,7 +2168,7 @@ def analizar_codigo(ruta_archivo,caso):
                                 guardar_como_any=0
                             elif estado_actual=="q0":
                                 #verificamos de donde viene
-                                print("estado anterior:"+estado_anterior)
+                                #print("estado anterior:"+estado_anterior)
                                 #if estado_anterior==
                                 #Hubo un espacio inecesario
                                 lexema=""
@@ -2154,9 +2193,9 @@ def analizar_codigo(ruta_archivo,caso):
                         elif (estado_siguiente=="q2" or estado_siguiente=="q1") and (estado_actual in estados_FPR):
                             lexema = lexema[:-1] 
                             memoria+=caracter
-                            print(lexema+"in reservadas")
+                            #print(lexema+"in reservadas")
                             if lexema in palabras_reservadas:
-                                print("yes")
+                                #print("yes")
                                 objeto=MisTokens(lexema.upper(),lexema,"null")
                                 lista_objetos.append(objeto)
                                 guardar_como_any=1
@@ -2166,8 +2205,8 @@ def analizar_codigo(ruta_archivo,caso):
                                 else:
                                     lexema=""
                             else:
-                                print("El objeto guardado fue:"+lexema)
-                                input("Que paso")
+                                #print("El objeto guardado fue:"+lexema)
+                                #input("Que paso")
                                 objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                 lista_objetos.append(objeto)
                                 guardar_como_any=1
@@ -2180,7 +2219,7 @@ def analizar_codigo(ruta_archivo,caso):
                             if estado_actual=="q7":
                                 lexema = lexema[:-1]
                                 memoria+=caracter
-                                print("guardamos:"+lexema)
+                                #print("guardamos:"+lexema)
                                 objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                 lista_objetos.append(objeto)
                                 if caracter==" ":
@@ -2194,22 +2233,22 @@ def analizar_codigo(ruta_archivo,caso):
                                         lexema=""
                                 guardar_como_any=0
                         elif estado_siguiente=="q500":
-                            print("En q500")
+                            #print("En q500")
                             #Es posiblemente id, asi que verificamos
                             #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
-                            print("Estamos a punto de guardar, recibimos algo y venimos un estado qn:"+lexema)
-                            print("E actual:"+estado_actual)
+                            #print("Estamos a punto de guardar, recibimos algo y venimos un estado qn:"+lexema)
+                            #print("E actual:"+estado_actual)
                             if (estado_actual in estados_FPR) and caso!="any":
-                                print("Estado actual pertenece a estados finales de reservadas")
+                                #print("Estado actual pertenece a estados finales de reservadas")
                                 if(caracter==" "):
-                                    print("quitamos espacio")
+                                    #print("quitamos espacio")
                                     lexema = lexema[:-1]
                                 else:
                                     lexema = lexema[:-1] 
                                     memoria+=caracter
-                                print(lexema+"in reservadas")
+                                #print(lexema+"in reservadas")
                                 if lexema in palabras_reservadas:
-                                    print("yes")
+                                    #print("yes")
                                     objeto=MisTokens(lexema.upper(),lexema,"null")
                                     lista_objetos.append(objeto)
                                     guardar_como_any=0
@@ -2219,8 +2258,8 @@ def analizar_codigo(ruta_archivo,caso):
                                     else:
                                         lexema=""
                                 else:
-                                    print("El objeto guardado fue:"+lexema)
-                                    input("Que paso")
+                                    #print("El objeto guardado fue:"+lexema)
+                                    #input("Que paso")
                                     objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                     lista_objetos.append(objeto)
                                     guardar_como_any=0
@@ -2231,7 +2270,7 @@ def analizar_codigo(ruta_archivo,caso):
                             elif estado_actual =="q3":
                                 lexema = lexema[:-1]
                                 memoria+=caracter
-                                print("se guardo"+lexema)
+                                #print("se guardo"+lexema)
                                 objeto=MisTokens("ENTERO",lexema,lexema)
                                 lista_objetos.append(objeto)
                                 if caracter==" ":
@@ -2278,7 +2317,7 @@ def analizar_codigo(ruta_archivo,caso):
                             elif estado_actual =="q7":
                                 lexema = lexema[:-1]
                                 memoria+=caracter
-                                print("guardamos:"+lexema)
+                                #print("guardamos:"+lexema)
                                 objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                 lista_objetos.append(objeto)
                                 if caracter==" ":
@@ -2293,7 +2332,7 @@ def analizar_codigo(ruta_archivo,caso):
                                 guardar_como_any=0
                             elif estado_actual=="q0":
                                 #verificamos de donde viene
-                                print("estado anterior:"+estado_anterior)
+                                print("")
                                 #if estado_anterior==
                                 #Hubo un espacio inecesario
                                 #lexema=""
@@ -2336,7 +2375,7 @@ def analizar_codigo(ruta_archivo,caso):
                                 #es otro simbolo
                                 lexema = lexema[:-1]
                                 memoria+=caracter
-                                print("lexema"+lexema)
+                                #print("lexema"+lexema)
                                 objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                 lista_objetos.append(objeto)
                                 if caracter==" ":
@@ -2354,19 +2393,19 @@ def analizar_codigo(ruta_archivo,caso):
                                 estado_siguiente="q7"
                         elif estado_siguiente=="q7":
                             #guardamos porque llegamos a q0 en la siguiente, pero hay que ver que guardaremos
-                            print("Estamos a punto de guardar, recibimos un simbolo y venimos un estado qn:"+lexema)
-                            print("E actual:"+estado_actual)
+                            #print("Estamos a punto de guardar, recibimos un simbolo y venimos un estado qn:"+lexema)
+                            #print("E actual:"+estado_actual)
                             if estado_actual in estados_FPR:
-                                print("Estado actual pertenece a estados finales de reservadas")
+                                #print("Estado actual pertenece a estados finales de reservadas")
                                 if(caracter==" "):
-                                    print("quitamos espacio")
+                                    #print("quitamos espacio")
                                     lexema = lexema[:-1]
                                 else:
                                     lexema = lexema[:-1] 
                                     memoria+=caracter
-                                print(lexema+"in reservadas")
+                                #print(lexema+"in reservadas")
                                 if lexema in palabras_reservadas:
-                                    print("yes")
+                                    #print("yes")
                                     objeto=MisTokens(lexema.upper(),lexema,"null")
                                     lista_objetos.append(objeto)
                                     guardar_como_any=0
@@ -2376,8 +2415,8 @@ def analizar_codigo(ruta_archivo,caso):
                                     else:
                                         lexema=""
                                 else:
-                                    print("El objeto guardado fue:"+lexema)
-                                    input("Que paso")
+                                    #print("El objeto guardado fue:"+lexema)
+                                    #input("Que paso")
                                     objeto=MisTokens("IDENTIFICADOR",lexema,"null")
                                     lista_objetos.append(objeto)
                                     guardar_como_any=0
@@ -2388,7 +2427,7 @@ def analizar_codigo(ruta_archivo,caso):
                             elif estado_actual =="q3":
                                 lexema = lexema[:-1]
                                 memoria+=caracter
-                                print("se guardo"+lexema)
+                                #print("se guardo"+lexema)
                                 objeto=MisTokens("ENTERO",lexema,lexema)
                                 lista_objetos.append(objeto)
                                 if caracter==" ":
@@ -2454,19 +2493,19 @@ def analizar_codigo(ruta_archivo,caso):
                                 guardar_como_any=0
                             elif estado_actual=="q0":
                                 #verificamos de donde viene
-                                print("estado anterior:"+estado_anterior)
+                                print("")
                                 #Hubo un espacio inecesario
                                 #lexema=""
 
                         else:
                             if estado_actual=="q7":
-                                print("Estamos a punto de guardar, venimos de simbolo hacia opciones:"+lexema)
-                                print("E actual:"+estado_actual)
+                                #print("Estamos a punto de guardar, venimos de simbolo hacia opciones:"+lexema)
+                                #print("E actual:"+estado_actual)
                                 #if caracter not in estados_nfa.get(estado_actual, {}):
                                 if caracter in PosiblesPR:
                                     lexema = lexema[:-1]
                                     memoria+=caracter
-                                    print("guardamos:"+lexema)
+                                    #print("guardamos:"+lexema)
                                     objeto=MisTokens((nombres_simbolos[lexema]),lexema,"null")
                                     lista_objetos.append(objeto)
                                     if caracter==" ":
@@ -2482,7 +2521,7 @@ def analizar_codigo(ruta_archivo,caso):
                                     
             estado_anterior=estado_actual        
             estado_actual=estado_siguiente        
-            print()
+            #print()
                 
             contador_caracteres += 1
             indice += 1
@@ -2494,7 +2533,9 @@ def analizar_codigo(ruta_archivo,caso):
 def main():
     while True:
         entrada = input("$>>")
-        
+        # Limpia la lista de objetos por si esta llena
+        lista_objetos.clear()
+
         # Verificar si la entrada es un archivo con una ruta completa de estilo Windows
         if ":" in entrada:
             caso=1

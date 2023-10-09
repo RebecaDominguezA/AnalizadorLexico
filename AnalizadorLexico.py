@@ -1,3 +1,4 @@
+print("Eres para mi lo que haskell para tecla")
 import os
 import sys
 # Definición de automata

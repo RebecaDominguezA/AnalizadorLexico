@@ -91,7 +91,7 @@ PosiblesPR=["a", "e", "f", "h", "i", "l", "o", "p", "r", "s", "t", "u", "v" ,"w"
 Vocabulario=["a","b","c","d","e", "f", "g", "h", "i", "j", "k", "l","m","n","o","p","q","r","s","t", "u", "v" ,"w","x",
              "y","z","<", ">", "!", "=", "+", "-", "*", "/", "{", "}", "(", ")", ",", ".", ";",
              "A","B","C","D","E", "F", "G", "H", "I", "J", "K", "L","M","N","O","P","Q","R","S","T", "U", "V" ,"W","X",
-             "Y","Z"]
+             "Y","Z"," "]
 #Estados Finales PR
 estados_FPR=["q20","q23","q26","q28","q29","q32","q36"]
 #Estados FINALES para String
@@ -157,7 +157,13 @@ def interprete(caracter, simbolos,PosiblesPR,guardar_como_any):
         return caracter
     else:
         if guardar_como_any==1:
-            return "any"
+            if caracter in Vocabulario:
+                return "any"
+            else:
+                print("Analisis:")
+                for objeto in lista_objetos:
+                    print("<"+objeto.tipo + ","+objeto.valor1+","+objeto.valor2+">")
+                sys.exit("Error: No se reconoce el caracter "+caracter+".")
         elif caracter==" ":
             #print("Caso vacio")
             return caracter
@@ -2539,19 +2545,23 @@ def main():
         lista_objetos.clear()
 
         # Verificar si la entrada es un archivo con una ruta completa de estilo Windows
-        if ":" in entrada:
+        if ".txt" in entrada:
             caso=1
-            ruta_archivo = entrada.strip()
+            ruta_archivo=os.path.dirname(os.path.realpath(__file__))
+            ruta_archivo=ruta_archivo + '\\'+entrada
+            ruta_archivo=ruta_archivo.replace("\\","/")
             analizar_codigo(ruta_archivo,caso)
-                
-            input("\nPresiona Enter para continuar...")
-            os.system('cls' if os.name == 'nt' else 'clear')
+            print()
+            #input("\nPresiona Enter para continuar...")
+            #os.system('cls' if os.name == 'nt' else 'clear')
         else:
             caso=2
             codigo = entrada
             analizar_codigo(codigo,caso)
-            input("\nPresiona Enter para continuar...")
-            os.system('cls' if os.name == 'nt' else 'clear')
+            print()
+            #input("\nPresiona Enter para continuar...")
+            #os.system('cls' if os.name == 'nt' else 'clear')
+
 
 if __name__ == "__main__":
     try:

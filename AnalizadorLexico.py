@@ -2499,7 +2499,7 @@ def main():
         if ":" in entrada:
             caso=1
             ruta_archivo = entrada.strip()
-            analizar_codigo(ruta_archivo,caso2)
+            analizar_codigo(ruta_archivo,caso)
                 
             input("\nPresiona Enter para continuar...")
             os.system('cls' if os.name == 'nt' else 'clear')

@@ -88,8 +88,10 @@ simbolos = ["<", ">", "!", "=", "+", "-", "*", "/", "{", "}", "(", ")", ",", "."
 palabras_reservadas=["and","else","false","for","fun","if","null","or","print","return","true","var","while"]
 #Diccionario de letras a reconocer
 PosiblesPR=["a", "e", "f", "h", "i", "l", "o", "p", "r", "s", "t", "u", "v" ,"w","n"]
-#Vocabulario=["a","e","f","i","n","o","p","r","t","v","w","<", ">", "!", "=", "+", "-", "*", "/", "{", "}", "(", ")", ",", ".", ";"]
-
+Vocabulario=["a","b","c","d","e", "f", "g", "h", "i", "j", "k", "l","m","n","o","p","q","r","s","t", "u", "v" ,"w","x",
+             "y","z","<", ">", "!", "=", "+", "-", "*", "/", "{", "}", "(", ")", ",", ".", ";",
+             "A","B","C","D","E", "F", "G", "H", "I", "J", "K", "L","M","N","O","P","Q","R","S","T", "U", "V" ,"W","X",
+             "Y","Z"]
 #Estados Finales PR
 estados_FPR=["q20","q23","q26","q28","q29","q32","q36"]
 #Estados FINALES para String

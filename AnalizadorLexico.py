@@ -253,7 +253,7 @@ def analizar_codigo(ruta_archivo,caso):
                                         lista_objetos.append(objeto)
                                         guardar_como_any=0
                                 elif estado_actual in estados_FString:
-                                    objeto=MisTokens("STRING",lexema,"null")
+                                    objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                                     lista_objetos.append(objeto)
                                     guardar_como_any=0
                                 elif estado_actual =="q3":
@@ -400,7 +400,7 @@ def analizar_codigo(ruta_archivo,caso):
                                         lista_objetos.append(objeto)
                                         guardar_como_any=0
                                 elif estado_actual in estados_FString:
-                                    objeto=MisTokens("STRING",lexema,"null")
+                                    objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                                     lista_objetos.append(objeto)
                                     guardar_como_any=0
                                 elif estado_actual =="q3":
@@ -532,7 +532,7 @@ def analizar_codigo(ruta_archivo,caso):
                                         lista_objetos.append(objeto)
                                         guardar_como_any=0
                                 elif estado_actual in estados_FString:
-                                    objeto=MisTokens("STRING",lexema,"null")
+                                    objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                                     lista_objetos.append(objeto)
                                     guardar_como_any=0
                                 elif estado_actual =="q3":
@@ -729,7 +729,7 @@ def analizar_codigo(ruta_archivo,caso):
                                         lista_objetos.append(objeto)
                                         guardar_como_any=0
                                 elif estado_actual in estados_FString:
-                                    objeto=MisTokens("STRING",lexema,"null")
+                                    objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                                     lista_objetos.append(objeto)
                                     guardar_como_any=0
                                 elif estado_actual =="q3":
@@ -896,7 +896,7 @@ def analizar_codigo(ruta_archivo,caso):
                                             #lexema = lexema[:-1]
                                             memoria+=caracter
                                             #print("guardamos:"+lexema)
-                                            objeto=MisTokens("STRING",lexema,"null")
+                                            objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                                             lista_objetos.append(objeto)
                                             if caracter==" ":
                                                 lexema=""
@@ -1087,7 +1087,7 @@ def analizar_codigo(ruta_archivo,caso):
                                                 lista_objetos.append(objeto)
                                                 guardar_como_any=0
                                         elif estado_actual in estados_FString:
-                                            objeto=MisTokens("STRING",lexema,"null")
+                                            objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                                             lista_objetos.append(objeto)
                                             guardar_como_any=0
                                         elif estado_actual =="q3":
@@ -1245,7 +1245,7 @@ def analizar_codigo(ruta_archivo,caso):
                                                 lista_objetos.append(objeto)
                                                 guardar_como_any=0
                                         elif estado_actual in estados_FString:
-                                            objeto=MisTokens("STRING",lexema,"null")
+                                            objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                                             lista_objetos.append(objeto)
                                             guardar_como_any=0
                                         elif estado_actual =="q3":
@@ -1445,7 +1445,7 @@ def analizar_codigo(ruta_archivo,caso):
                             lista_objetos.append(objeto)
                             guardar_como_any=0
                     elif estado_actual in estados_FString:
-                        objeto=MisTokens("STRING",lexema,"null")
+                        objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                         lista_objetos.append(objeto)
                         guardar_como_any=0
                     elif estado_actual =="q3":
@@ -1592,7 +1592,7 @@ def analizar_codigo(ruta_archivo,caso):
                             lista_objetos.append(objeto)
                             guardar_como_any=0
                     elif estado_actual in estados_FString:
-                        objeto=MisTokens("STRING",lexema,"null")
+                        objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                         lista_objetos.append(objeto)
                         guardar_como_any=0
                     elif estado_actual =="q3":
@@ -1724,7 +1724,7 @@ def analizar_codigo(ruta_archivo,caso):
                             lista_objetos.append(objeto)
                             guardar_como_any=0
                     elif estado_actual in estados_FString:
-                        objeto=MisTokens("STRING",lexema,"null")
+                        objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                         lista_objetos.append(objeto)
                         guardar_como_any=0
                     elif estado_actual =="q3":
@@ -1921,7 +1921,7 @@ def analizar_codigo(ruta_archivo,caso):
                             lista_objetos.append(objeto)
                             guardar_como_any=0
                     elif estado_actual in estados_FString:
-                        objeto=MisTokens("STRING",lexema,"null")
+                        objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                         lista_objetos.append(objeto)
                         guardar_como_any=0
                     elif estado_actual =="q3":
@@ -2085,7 +2085,7 @@ def analizar_codigo(ruta_archivo,caso):
                                     lista_objetos.append(objeto)
                                     guardar_como_any=0
                             elif estado_actual in estados_FString:
-                                objeto=MisTokens("STRING",lexema,"null")
+                                objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                                 lista_objetos.append(objeto)
                                 guardar_como_any=0
                             elif estado_actual =="q3":
@@ -2264,7 +2264,7 @@ def analizar_codigo(ruta_archivo,caso):
                                     lista_objetos.append(objeto)
                                     guardar_como_any=0
                             elif estado_actual in estados_FString:
-                                objeto=MisTokens("STRING",lexema,"null")
+                                objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                                 lista_objetos.append(objeto)
                                 guardar_como_any=0
                             elif estado_actual =="q3":
@@ -2421,7 +2421,7 @@ def analizar_codigo(ruta_archivo,caso):
                                     lista_objetos.append(objeto)
                                     guardar_como_any=0
                             elif estado_actual in estados_FString:
-                                objeto=MisTokens("STRING",lexema,"null")
+                                objeto=MisTokens("STRING",lexema,lexema.strip('"'))
                                 lista_objetos.append(objeto)
                                 guardar_como_any=0
                             elif estado_actual =="q3":
